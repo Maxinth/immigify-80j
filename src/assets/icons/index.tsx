@@ -55,14 +55,42 @@ const DownIcon = () => {
     </svg>
   );
 };
-// const Icon = () => {
-//   return <div>Icon</div>;
-// };
-// const Icon = () => {
-//   return <div>Icon</div>;
-// };
+const HomeIcon = () => {
+  return (
+    <svg
+      width="30"
+      height="30"
+      viewBox="0 0 30 30"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="group-hover:fill-img-black group-hover:stroke-img-black "
+    >
+      <path
+        d="M3.75 15L6.25 12.5M6.25 12.5L15 3.75L23.75 12.5M6.25 12.5V25C6.25 25.3315 6.3817 25.6495 6.61612 25.8839C6.85054 26.1183 7.16848 26.25 7.5 26.25H11.25M23.75 12.5L26.25 15M23.75 12.5V25C23.75 25.3315 23.6183 25.6495 23.3839 25.8839C23.1495 26.1183 22.8315 26.25 22.5 26.25H18.75M11.25 26.25C11.5815 26.25 11.8995 26.1183 12.1339 25.8839C12.3683 25.6495 12.5 25.3315 12.5 25V20C12.5 19.6685 12.6317 19.3505 12.8661 19.1161C13.1005 18.8817 13.4185 18.75 13.75 18.75H16.25C16.5815 18.75 16.8995 18.8817 17.1339 19.1161C17.3683 19.3505 17.5 19.6685 17.5 20V25C17.5 25.3315 17.6317 25.6495 17.8661 25.8839C18.1005 26.1183 18.4185 26.25 18.75 26.25M11.25 26.25H18.75"
+        stroke="black"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+const BorderWidthOnHoverIcon = () => {
+  return (
+    <svg
+      width="3"
+      height="26"
+      viewBox="0 0 3 26"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="relative -right-[10px] top-[1px] opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-100"
+    >
+      <rect width="3" height="26" rx="1.5" fill="black" />
+    </svg>
+  );
+};
 // const Icon = () => {
 //   return <div>Icon</div>;
 // };
 
-export { BellIcon, AvatarIcon, DownIcon };
+export { BellIcon, AvatarIcon, DownIcon, HomeIcon, BorderWidthOnHoverIcon };
