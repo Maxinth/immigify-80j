@@ -1,12 +1,14 @@
 import "./App.css";
 import DashboardMain from "./components/DashBoardMain";
 import Layout from "./components/Layout";
-
+import AppProvider from "./components/AppProvider";
 function App() {
   return (
-    <Layout>
-      <DashboardMain />
-    </Layout>
+    <AppProvider>
+      <Layout>
+        <DashboardMain />
+      </Layout>
+    </AppProvider>
   );
 }
 
