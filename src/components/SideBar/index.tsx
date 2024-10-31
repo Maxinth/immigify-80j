@@ -1,6 +1,6 @@
 import { Box, Flex } from "@chakra-ui/react";
 import SideBarItem from "./SideBarItem";
-
+import { sidebarItems } from "./data";
 const SideBar = () => {
   return (
     <Box
@@ -17,9 +17,9 @@ const SideBar = () => {
       className="shadow-bottom-xs "
     >
       <Flex direction="column" gap="4" className="mt-[103px] ">
-        <SideBarItem />
-        <SideBarItem />
-        <SideBarItem />
+        {sidebarItems.map((item) => (
+          <SideBarItem key={item.title} {...item} />
+        ))}
       </Flex>
     </Box>
   );

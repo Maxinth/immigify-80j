@@ -1,18 +1,27 @@
 import { Box, Text } from "@chakra-ui/react";
-import { HomeIcon, BorderWidthOnHoverIcon } from "@/assets/icons";
-const SideBarItem = () => {
+import { BorderWidthOnHoverIcon } from "@/assets/icons";
+
+interface ISideSideBarItem {
+  title: string;
+  InitIcon: React.ReactNode;
+  HoverIcon: React.ReactNode;
+}
+const SideBarItem = ({ title, InitIcon, HoverIcon }: ISideSideBarItem) => {
   return (
     <Box
       role="group"
       className="flex items-center justify-between group hover:bg-img-gray transition-all ease-in-out duration-100 cursor-pointer rounded-[5px] py-3 px-[11px]"
     >
       <Box className="flex items-center gap-2">
-        <HomeIcon />
+        <Box>
+          {InitIcon}
+          {HoverIcon}
+        </Box>
         <Text
           as="span"
           className="font-pop text-xl !leading-[24px] text-img-black"
         >
-          Home
+          {title}
         </Text>
       </Box>
       <BorderWidthOnHoverIcon />
