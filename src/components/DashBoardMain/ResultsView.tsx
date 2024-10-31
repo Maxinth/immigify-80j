@@ -1,6 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
 import { EligibleIcon } from "@/assets/icons";
 // import ReactLoading from "react-loading";
+import { visaCardsData } from "./data";
 import VisaTypeCard from "./VisaTypeCards";
 const ResultsView = () => {
   return (
@@ -11,14 +12,20 @@ const ResultsView = () => {
           Eligibility Agent
         </Text>
       </Box>
-      <Text className="font-normal text-base !text-img-black">
+      <Text className="font-normal text-base !text-img-black py-2">
         Based on your profile, Below are the listed Visa Type you are eligible
         for{" "}
       </Text>
 
-      <Box className="flex items-center justify-center h-[70vh]">
+      <Box className="flex pb-72 pt-96 items-center overflow-y-auto h-[100vh] flex-col justify-center gap-[30px]">
         {/* <ReactLoading type={"bubbles"} color="#000000" /> */}
-        <VisaTypeCard />
+        {visaCardsData?.map((item, index) => (
+          <VisaTypeCard
+            key={index}
+            title={item.title}
+            criteria={item.criteria}
+          />
+        ))}
       </Box>
     </Box>
   );
