@@ -6,7 +6,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Nav />
-      <Box>
+      <Box className="flex items-center justify-center">
         <SideBar />
         {children}
       </Box>
