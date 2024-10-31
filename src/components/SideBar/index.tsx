@@ -6,7 +6,7 @@ const SideBar = () => {
     <Box
       as="aside"
       pos="fixed"
-      top="41px"
+      top="71px"
       left="0"
       h="100vh"
       w="282px"

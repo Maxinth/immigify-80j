@@ -1,6 +1,7 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, Button } from "@chakra-ui/react";
 import PillBox from "./PillBox";
 import { countryData } from "./data";
+import { SearchIcon } from "@/assets/icons";
 
 const InteractionsBox = () => {
   return (
@@ -25,6 +26,12 @@ const InteractionsBox = () => {
                 withIcon
               />
             ))}
+            <Button
+              variant="outline"
+              className="bg-[#090909] !rounded-[10px] !p-4 h-[47px] "
+            >
+              <SearchIcon />
+            </Button>
           </Box>
         </Box>
       </Box>
