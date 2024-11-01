@@ -17,6 +17,14 @@ const OccupationsView = () => {
     handleAddNewOccupation(occupationInput);
     setOccupationInput("");
   };
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleChange = (e: { target: { value: any } }) => {
+    const input = e.target.value;
+    if (/^[a-zA-Z\s]*$/.test(input)) {
+      setOccupationInput(input);
+    }
+  };
   return (
     <Box className="flex items-start gap-[40px] flex-col justify-start">
       <Box className="flex items-center gap-[10px] flex-wrap">
@@ -34,8 +42,9 @@ const OccupationsView = () => {
         <Box className="flex items-center gap-2 flex-1 ">
           <Input
             placeholder="Type in your occupation"
+            type="text"
             value={occupationInput}
-            onChange={(e) => setOccupationInput(e.target.value)}
+            onChange={handleChange}
             className=" !border-b !border-b-[#a6a6a6] rounded-none outline-none "
             _placeholder={{
               color: "#A6A6A6",

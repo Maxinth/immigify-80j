@@ -19,7 +19,38 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [occupations, setOccupations] = useState(occData);
 
   const handleAddNewOccupation = (val: string) => {
-    if (val.trim() !== "" && !occupations.includes(val.trim().toLowerCase())) {
+    if (val.trim() === "") {
+      toast("", {
+        description: "Enter an occupation to continue",
+        position: "top-right",
+        duration: 1000,
+        style: {
+          background: "#4299e1",
+          color: "white",
+          fontSize: "16px",
+        },
+      });
+    }
+
+    if (occupations.includes(val.trim().toLowerCase())) {
+      toast("", {
+        description: "Occupation already exists",
+        position: "top-right",
+        duration: 1000,
+        style: {
+          background: "#4299e1",
+          color: "white",
+          fontSize: "16px",
+        },
+      });
+      setOccupations(occupations);
+    }
+
+    if (
+      val.trim() !== "" &&
+      val.trim()?.length !== 0 &&
+      !occupations.includes(val.trim().toLowerCase())
+    ) {
       toast("", {
         description: "Adding new occupation",
         position: "top-right",
@@ -32,7 +63,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
       });
 
       setTimeout(() => {
-        setOccupations([...occupations, val]);
+        setOccupations([...occupations, val.toLowerCase()]);
         toast("", {
           description: "Occupation Added",
           position: "top-right",
@@ -44,18 +75,6 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
           },
         });
       }, 2000);
-    } else {
-      toast("", {
-        description: "Enter an occupation to continue",
-        position: "top-right",
-        duration: 1000,
-        style: {
-          background: "#4299e1",
-          color: "white",
-          fontSize: "16px",
-        },
-      });
-      setOccupations(occupations);
     }
   };
 
