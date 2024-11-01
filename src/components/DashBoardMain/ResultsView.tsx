@@ -6,11 +6,12 @@ import { useAppData } from "@/context";
 const ResultsView = () => {
   const { isLoading, view, cardList, occupation } = useAppData();
 
-  const isLoadingVisaTypes = isLoading && view === "occupation";
-  console.log({ isLoading, view, isLoadingVisaTypes });
-
   return (
-    <Box className=" w-[30%] relative !text-img-black  shadow-bottom-sm  px-[30px] h-screen !overflow-y-auto">
+    <Box
+      className={`${
+        view === "" ? "!w-0 !h-0 " : "w-[30%] h-screen"
+      } relative !text-img-black  shadow-bottom-sm  px-[30px] !overflow-y-auto transition-all duration-300 ease-in`}
+    >
       <Box className="sticky top-[102px]  bg-white w-full">
         <Box className="w-full mt-36 flex pt-2 items-center gap-[5px] mb-[15px]">
           <EligibleIcon />{" "}
