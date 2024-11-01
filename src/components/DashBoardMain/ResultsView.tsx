@@ -19,7 +19,7 @@ const ResultsView = () => {
             Eligibility Agent
           </Text>
         </Box>
-        <Text className="font-normal text-base !text-img-black py-2">
+        <Text className="font-normal text-sm md:text-base !text-img-black py-2">
           Based on your profile, Below are the listed Visa Type you are eligible
           for{" "}
         </Text>

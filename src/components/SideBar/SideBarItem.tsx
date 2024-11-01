@@ -19,7 +19,7 @@ const SideBarItem = ({ title, InitIcon, HoverIcon }: ISideSideBarItem) => {
         </Box>
         <Text
           as="span"
-          className="font-pop text-lg !leading-[24px] text-img-black"
+          className="font-pop text-sm md:text-lg !leading-[24px] text-img-black"
         >
           {title}
         </Text>
