@@ -7,6 +7,7 @@ const ResultsView = () => {
   const { isLoading, view, cardList, occupation } = useAppData();
 
   const isLoadingVisaTypes = isLoading && view === "occupation";
+  console.log({ isLoading, view, isLoadingVisaTypes });
 
   return (
     <Box className=" w-[30%] relative !text-img-black  shadow-bottom-sm  px-[30px] h-screen !overflow-y-auto">
@@ -28,8 +29,8 @@ const ResultsView = () => {
           occupation === "Engineering" ? "" : "  items-start"
         } overflow-y-auto  flex-col justify-start gap-[30px] pb-8 `}
       >
-        {view === "" ? null : isLoadingVisaTypes ? (
-          <Box className="relative -top-40">
+        {view === "" ? null : isLoading && view === "country" ? (
+          <Box className="flex items-center justify-center w-full h-[70vh]  ">
             <ReactLoading
               type="bubbles"
               color="#000000"

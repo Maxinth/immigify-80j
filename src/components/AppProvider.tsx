@@ -30,6 +30,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     if (selectedCountry === "Nigeria") {
       setIsLoading(true);
+      setView("country");
       setTimeout(() => {
         setIsLoading(false);
       }, 3000);
@@ -46,11 +47,13 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (isLoading) {
+      setView("country");
       setTimeout(() => {
         setView("occupation");
         setBoxTitle("Nigeria");
         setBoxQuestion("What’s your current occupation?");
-      }, 1000);
+        setIsLoading(false);
+      }, 3000);
     }
   }, [isLoading]);
   return (
