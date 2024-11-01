@@ -31,7 +31,7 @@ const ResultsView = () => {
         } overflow-y-auto  flex-col justify-start gap-[30px] pb-8 `}
       >
         {view === "" ? null : isLoading && view === "country" ? (
-          <Box className="flex items-center justify-center w-full h-[70vh]  ">
+          <Box className="flex items-center justify-center w-full h-[20vh] lg:h-[70vh]  ">
             <ReactLoading
               type="bubbles"
               color="#000000"
