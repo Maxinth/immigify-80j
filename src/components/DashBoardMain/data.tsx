@@ -34,3 +34,16 @@ export const visaCardsData = [
     criteria: ["Undergraduate", "Nigerian", "Job Experience"],
   },
 ];
+
+export const occupationsData = [
+  "Engineering",
+  "HealthCare",
+  "Education",
+  "Information Technology",
+  "Finance & Accounting",
+  "Marketing & Communication",
+  "Arts & Entertainment",
+  "Hospitality & Tourism",
+  "Legal & Law Enforcement",
+  "Construction & Manu.",
+];

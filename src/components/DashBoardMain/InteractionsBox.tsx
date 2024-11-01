@@ -3,6 +3,7 @@ import PillBox from "./PillBox";
 import { countryData } from "./data";
 import { SearchIcon } from "@/assets/icons";
 import { useAppData } from "@/context";
+import OccupationsView from "./OccupationsView";
 
 const InteractionsBox = () => {
   const { handlePillClick, boxTitle, boxQuestion, view } = useAppData();
@@ -40,7 +41,7 @@ const InteractionsBox = () => {
                 </Button>
               </>
             ) : (
-              <>Occupation View</>
+              <OccupationsView />
             )}
           </Box>
         </Box>
