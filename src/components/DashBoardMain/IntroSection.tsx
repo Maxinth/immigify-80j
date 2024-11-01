@@ -4,7 +4,7 @@ import { RestartIcon } from "@/assets/icons";
 import { useAppData } from "@/context";
 
 const IntroSection = () => {
-  const { handleRestart } = useAppData();
+  const { handleRestart, view } = useAppData();
   return (
     <>
       <Box className="flex items-center gap-[5px]">
@@ -20,7 +20,9 @@ const IntroSection = () => {
         <Button
           variant={"outline"}
           onClick={handleRestart}
-          className="flex items-center gap-2 text-base font-medium hover:bg-img-gray  text-img-black !rounded-[10px] shadow-bottom-sm hover:shadow-bottom-md py-[10px] px-[18px]"
+          className={`flex ${
+            view !== "" ? "glow" : ""
+          } items-center gap-2 text-base font-medium hover:bg-img-gray  text-img-black !rounded-[10px] shadow-bottom-sm hover:shadow-bottom-md py-[10px] px-[18px]`}
         >
           <RestartIcon />
           Restart
