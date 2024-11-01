@@ -13,7 +13,7 @@ const SideBar = () => {
       bg="white"
       color="white"
       px="14px"
-      className="shadow-bottom-xs "
+      className="shadow-bottom-xs  hidden lg:block"
     >
       <Flex direction="column" gap="4" className="mt-[103px] ">
         {sidebarItems.map((item) => (

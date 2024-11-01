@@ -9,7 +9,7 @@ const ResultsView = () => {
   return (
     <Box
       className={`${
-        view === "" ? "!w-0 !h-0 " : "w-[30%] h-screen"
+        view === "" ? "!w-0 !h-0 " : "lg:w-[30%] w-[100%] "
       } relative !text-img-black  shadow-bottom-sm  px-[30px] !overflow-y-auto transition-all duration-300 ease-in`}
     >
       <Box className="sticky top-[102px]  bg-white w-full">

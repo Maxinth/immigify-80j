@@ -3,6 +3,7 @@ import NavLogo from "../../assets/images/nav-logo.png";
 import { BellIcon } from "@/assets/icons";
 import { Box } from "@chakra-ui/react";
 import AccountPopOver from "./AccountPopOver";
+import MobileNavIcons from "./MobileNavIcons";
 const Nav = () => {
   return (
     <Box
@@ -15,7 +16,8 @@ const Nav = () => {
       className="py-[28px] px-[25px] bg-white shadow-bottom-sm border-b flex items-center justify-between "
     >
       <img src={NavLogo} alt="logo" className="w-fit" />
-      <Box className="flex items-center gap-[50px]">
+      <MobileNavIcons />
+      <Box className="md:flex items-center gap-[50px] hidden">
         <BellIcon />
         <AccountPopOver />
       </Box>
