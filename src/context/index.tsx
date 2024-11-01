@@ -9,6 +9,8 @@ export const AppContext = createContext({
   boxQuestion: "",
   handleRestart: () => {},
   occupation: "",
+  occupations: [""],
+  handleAddNewOccupation: (_: string) => {},
   selectedCountry: "",
   cardList: [{ title: "", criteria: [""] }],
 });

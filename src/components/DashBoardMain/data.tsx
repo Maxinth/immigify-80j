@@ -36,14 +36,14 @@ export const visaCardsData = [
 ];
 
 export const occupationsData = [
-  "Engineering",
-  "HealthCare",
-  "Education",
-  "Information Technology",
-  "Finance & Accounting",
-  "Marketing & Communication",
-  "Arts & Entertainment",
-  "Hospitality & Tourism",
-  "Legal & Law Enforcement",
-  "Construction & Manu.",
+  "engineering",
+  "healthCare",
+  "education",
+  "information technology",
+  "finance & accounting",
+  "marketing & communication",
+  "arts & entertainment",
+  "hospitality & tourism",
+  "legal & law enforcement",
+  "construction & manu.",
 ];

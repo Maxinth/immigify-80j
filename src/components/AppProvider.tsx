@@ -1,6 +1,11 @@
 import { AppContext } from "@/context";
 import React, { useEffect, useState } from "react";
-import { visaCardsData } from "./DashBoardMain/data";
+import {
+  visaCardsData,
+  occupationsData as occData,
+} from "./DashBoardMain/data";
+import { Toaster, toast } from "sonner";
+
 const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState("");
@@ -11,6 +16,48 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
     "What’s your country of region?"
   );
   const [cardList, setCardList] = useState(visaCardsData);
+  const [occupations, setOccupations] = useState(occData);
+
+  const handleAddNewOccupation = (val: string) => {
+    if (val.trim() !== "" && !occupations.includes(val.trim().toLowerCase())) {
+      toast("", {
+        description: "Adding new occupation",
+        position: "top-right",
+        duration: 1000,
+        style: {
+          background: "#4299e1",
+          color: "white",
+          fontSize: "16px",
+        },
+      });
+
+      setTimeout(() => {
+        setOccupations([...occupations, val]);
+        toast("", {
+          description: "Occupation Added",
+          position: "top-right",
+          duration: 1000,
+          style: {
+            background: "green",
+            color: "white",
+            fontSize: "16px",
+          },
+        });
+      }, 2000);
+    } else {
+      toast("", {
+        description: "Enter an occupation to continue",
+        position: "top-right",
+        duration: 1000,
+        style: {
+          background: "#4299e1",
+          color: "white",
+          fontSize: "16px",
+        },
+      });
+      setOccupations(occupations);
+    }
+  };
 
   const handlePillClick = (val: string) => {
     return view === "country" || view === ""
@@ -38,7 +85,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   }, [selectedCountry]);
 
   useEffect(() => {
-    if (occupation === "Engineering") {
+    if (occupation.toLowerCase() === "engineering") {
       setCardList([visaCardsData[0]]);
     } else {
       setCardList(visaCardsData);
@@ -68,8 +115,11 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
         cardList,
         occupation,
         selectedCountry,
+        occupations,
+        handleAddNewOccupation,
       }}
     >
+      <Toaster />
       {children}
     </AppContext.Provider>
   );

@@ -21,7 +21,7 @@ const PillBox = ({
         isSelected ? "border-img-black shadow-bottom-lg" : "border-[#CCCCCC]"
       } rounded-[10px] text-base text-[#262626]`}
     >
-      <Text>{val}</Text>
+      <Text className="capitalize">{val}</Text>
       {withIcon && Icon}
     </Box>
   );
