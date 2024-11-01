@@ -29,9 +29,9 @@ const OccupationsView = () => {
           />
         ))}
       </Box>
-      <Box className="flex items-center gap-3 justify-between w-full">
+      <Box className="flex items-center gap-3 justify-between w-full flex-wrap">
         <Text className="">Occupation Not Listed above?</Text>
-        <Box className="flex items-center gap-2 flex-1">
+        <Box className="flex items-center gap-2 flex-1 ">
           <Input
             placeholder="Type in your occupation"
             value={occupationInput}

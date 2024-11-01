@@ -17,7 +17,7 @@ const Nav = () => {
     >
       <img src={NavLogo} alt="logo" className="w-fit" />
       <MobileNavIcons />
-      <Box className="md:flex items-center gap-[50px] hidden">
+      <Box className="lg:flex items-center gap-[50px] hidden">
         <BellIcon />
         <AccountPopOver />
       </Box>
