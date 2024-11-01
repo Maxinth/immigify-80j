@@ -5,12 +5,23 @@ interface IPillBox {
   Icon?: React.ReactNode;
   handleClick: () => void;
   withIcon?: boolean;
+  isSelected: boolean;
 }
-const PillBox = ({ val, Icon, withIcon, handleClick }: IPillBox) => {
+const PillBox = ({
+  val,
+  Icon,
+  withIcon,
+  handleClick,
+  isSelected,
+}: IPillBox) => {
   return (
     <Box
       onClick={handleClick}
-      className="border cursor-pointer hover:bg-img-gray hover:shadow-bottom-md transition-all duration-150 ease-in-out w-fit flex  py-3 px-2 items-center gap-[10px] border-[#CCCCCC] rounded-[10px] text-base text-[#262626]"
+      className={`border cursor-pointer  hover:bg-img-gray hover:shadow-bottom-md transition-all duration-150 ease-in-out w-fit flex  py-3 px-2 items-center gap-[10px] ${
+        isSelected
+          ? "border-img-black shadow-bottom-lg font-medium"
+          : "border-[#CCCCCC]"
+      } rounded-[10px] text-base text-[#262626]`}
     >
       <Text>{val}</Text>
       {withIcon && Icon}

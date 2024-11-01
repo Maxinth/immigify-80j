@@ -8,6 +8,9 @@ export const AppContext = createContext({
   boxTitle: "",
   boxQuestion: "",
   handleRestart: () => {},
+  occupation: "",
+  selectedCountry: "",
+  cardList: [{ title: "", criteria: [""] }],
 });
 
 export const useAppData = () => {

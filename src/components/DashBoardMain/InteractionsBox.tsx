@@ -6,7 +6,8 @@ import { useAppData } from "@/context";
 import OccupationsView from "./OccupationsView";
 
 const InteractionsBox = () => {
-  const { handlePillClick, boxTitle, boxQuestion, view } = useAppData();
+  const { handlePillClick, boxTitle, boxQuestion, view, selectedCountry } =
+    useAppData();
   console.log({ view });
   return (
     <Box className="rounded-[30px] bg-[#FAFAFA] pb-[50px] px-[19px] mt-[30px] text-img-black">
@@ -30,6 +31,7 @@ const InteractionsBox = () => {
                     key={item.country}
                     Icon={item.flag}
                     handleClick={() => handlePillClick(item.country)}
+                    isSelected={selectedCountry === item.country}
                     withIcon
                   />
                 ))}

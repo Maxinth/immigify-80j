@@ -1,12 +1,10 @@
 import { Box, Text } from "@chakra-ui/react";
 import { EligibleIcon } from "@/assets/icons";
 import ReactLoading from "react-loading";
-import { visaCardsData } from "./data";
 import VisaTypeCard from "./VisaTypeCards";
 import { useAppData } from "@/context";
 const ResultsView = () => {
-  const { isLoading, view } = useAppData();
-  // console.log({selectedCountry})
+  const { isLoading, view, cardList } = useAppData();
 
   const isLoadingVisaTypes = isLoading && view === "occupation";
   console.log({ isLoading, view });
@@ -36,9 +34,7 @@ const ResultsView = () => {
             />
           </Box>
         ) : (
-          visaCardsData.map((item, index) => (
-            <VisaTypeCard key={index} {...item} />
-          ))
+          cardList.map((item, index) => <VisaTypeCard key={index} {...item} />)
         )}
       </Box>
     </Box>

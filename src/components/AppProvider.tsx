@@ -1,15 +1,16 @@
 import { AppContext } from "@/context";
 import React, { useEffect, useState } from "react";
-
+import { visaCardsData } from "./DashBoardMain/data";
 const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState("");
-  const [, setOccupation] = useState("");
+  const [occupation, setOccupation] = useState("");
   const [view, setView] = useState("");
   const [boxTitle, setBoxTitle] = useState("Undergraduate Degree");
   const [boxQuestion, setBoxQuestion] = useState(
     "What’s your country of region?"
   );
+  const [cardList, setCardList] = useState(visaCardsData);
 
   const handlePillClick = (val: string) => {
     return view === "country" || view === ""
@@ -23,6 +24,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
     setBoxQuestion("What’s your country of region?");
     setSelectedCountry("");
     setOccupation("");
+    setCardList(visaCardsData);
   };
 
   useEffect(() => {
@@ -33,6 +35,14 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
       }, 3000);
     }
   }, [selectedCountry]);
+
+  useEffect(() => {
+    if (occupation === "Engineering") {
+      setCardList([visaCardsData[0]]);
+    } else {
+      setCardList(visaCardsData);
+    }
+  }, [occupation]);
 
   useEffect(() => {
     if (isLoading) {
@@ -52,6 +62,9 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
         boxTitle,
         boxQuestion,
         handleRestart,
+        cardList,
+        occupation,
+        selectedCountry,
       }}
     >
       {children}
