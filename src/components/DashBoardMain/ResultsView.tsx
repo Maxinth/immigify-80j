@@ -4,25 +4,29 @@ import ReactLoading from "react-loading";
 import VisaTypeCard from "./VisaTypeCards";
 import { useAppData } from "@/context";
 const ResultsView = () => {
-  const { isLoading, view, cardList } = useAppData();
+  const { isLoading, view, cardList, occupation } = useAppData();
 
   const isLoadingVisaTypes = isLoading && view === "occupation";
-  console.log({ isLoading, view });
+
   return (
-    <Box className=" w-[30%] !text-img-black  shadow-bottom-sm  px-[30px] h-screen !overflow-y-hidden sticky right-0 top-0 ">
-      <Box className="w-full mt-36 flex items-center gap-[5px] mb-[15px]">
-        <EligibleIcon />{" "}
-        <Text className="font-bold text-xl !text-img-black">
-          Eligibility Agent
+    <Box className=" w-[30%] relative !text-img-black  shadow-bottom-sm  px-[30px] h-screen !overflow-y-auto">
+      <Box className="sticky top-[102px]  bg-white w-full">
+        <Box className="w-full mt-36 flex pt-2 items-center gap-[5px] mb-[15px]">
+          <EligibleIcon />{" "}
+          <Text className="font-bold text-xl !text-img-black">
+            Eligibility Agent
+          </Text>
+        </Box>
+        <Text className="font-normal text-base !text-img-black py-2">
+          Based on your profile, Below are the listed Visa Type you are eligible
+          for{" "}
         </Text>
       </Box>
-      <Text className="font-normal text-base !text-img-black py-2">
-        Based on your profile, Below are the listed Visa Type you are eligible
-        for{" "}
-      </Text>
 
       <Box
-        className={`flex pb-72 pt-96 items-center overflow-y-auto h-[100vh] flex-col justify-center gap-[30px]`}
+        className={`flex ${
+          occupation === "Engineering" ? "" : "  items-start"
+        } overflow-y-auto  flex-col justify-start gap-[30px] pb-8 `}
       >
         {view === "" ? null : isLoadingVisaTypes ? (
           <Box className="relative -top-40">
