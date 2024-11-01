@@ -238,14 +238,40 @@ const EligibleIcon = () => {
     </svg>
   );
 };
-// const Icon = () => {
-//   return <div>Icon</div>;
-// };
-// const Icon = () => {
-//   return <div>Icon</div>;
-// };
+const CompletedStepIcon = () => {
+  return (
+    <svg
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="20" cy="20" r="20" fill="#F3F3F3" />
+      <circle cx="20" cy="20" r="14.5" fill="white" stroke="black" />
+      <circle cx="19.5" cy="19.5" r="4.5" fill="black" />
+    </svg>
+  );
+};
+const CurrentStepIcon = () => {
+  return (
+    <svg
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="20" cy="20" r="20" fill="white" />
+      <circle cx="20" cy="20" r="14.5" fill="white" stroke="#F3F3F3" />
+      <circle cx="19.5" cy="19.5" r="4.5" fill="#F3F3F3" />
+    </svg>
+  );
+};
 
 export {
+  CompletedStepIcon,
+  CurrentStepIcon,
   EligibleIcon,
   BellIcon,
   AvatarIcon,
